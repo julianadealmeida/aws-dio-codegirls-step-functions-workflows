@@ -1,0 +1,19 @@
+{
+  "Comment": "Modelo_State Machine para o desafio SCG",
+  "StartAt": "Inicio",
+  "States": {
+    "Inicio": {
+      "Type": "Pass",
+      "Result": "Execução iniciada",
+      "Next": "ProcessarDados"
+    },
+    "ProcessarDados": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:REGIAO:ID_DA_CONTA:function:NomeDaFuncaoLambda",
+      "Next": "Fim"
+    },
+    "Fim": {
+      "Type": "Succeed"
+    }
+  }
+}
